@@ -166,6 +166,15 @@ body{
   background: white;
   padding: 8px 4px 8px 8px;
 }
+#sidebar.black{
+  background-color: #555;
+  color: white;
+}
+#sidebar.red{
+  background-color: red;
+  color: white;
+}
+
 #sidebar img.curr_main_menu{
   float: right;
   width: 60px;
@@ -424,18 +433,25 @@ ul.nav.context li a:hover{
   font-size: 9px;
 }
 #login,
-#logout{
+#logout,
+#theme{
   border: 1px solid lightgrey;
   margin: 5px;
   padding: 10px 5px;
   position: relative;
-  
+  margin-bottom: 10px;
 }
 #login input{
   width: 98%;
 }
+#theme:before{
+  content: "Тема";
+}
 #login:before{
   content: "Вход";
+}
+#theme:before,
+#login:before{
   position: absolute;
   font-size: 10px;
   color: grey;

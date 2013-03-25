@@ -1,5 +1,13 @@
-<div id="sidebar">
-
+<div id="sidebar" <?php if(isset($theme_chanche)){echo "class=\"{$theme_chanche}\"";} ?>>
+          <?php 
+            if(isset($_SESSION['counter'])){
+              $_SESSION['counter']++;
+            }else{
+              $_SESSION['counter'] = 1;
+            }
+            echo $_SESSION['counter'];
+          ?>
+          <?php include ('include/theme.php'); ?>
           <div id="login">
             <div class="error"></div>
             <form >
