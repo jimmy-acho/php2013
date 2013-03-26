@@ -1,5 +1,5 @@
 <?php session_start(); ?>
-<?php require_once ('./include/auth_check.php');?>
+<?php //require_once ('./include/auth_check.php');?>
 <?php require_once ('./include/page.php'); ?>
 <?php
 if (isset($_POST['theme'])) {
