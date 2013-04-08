@@ -23,5 +23,6 @@ $menu_main[]=array(
     'name'=>'Цены',
     'href'=>'price',
     'title'=>'Цены',
+    'role'=>ROLE_EDITOR,
     );
 ?>

@@ -1,5 +1,7 @@
 <?php session_start(); ?>
-<?php //require_once ('./include/auth_check.php');?>
+
+<?php require_once ('config.php');?>
+<?php require_once ('./include/user_auth.php');?>
 <?php require_once ('./include/page.php'); ?>
 <?php
 if (isset($_POST['theme'])) {
@@ -15,7 +17,7 @@ if (isset($_POST['theme'])) {
 
 <?php
 if (isset($_GET['page'])) {
-  if(!isset($page[$_GET['page']])){
+  if(!isset($page[$_GET['page']])||((isset($page[$_GET['page']]['role']) && (!isset($_SESSION['role']) || ($page[$_GET['page']]['role'] < $_SESSION['role']))))){
     $_GET['page']='404';
   }
 } else {
@@ -29,6 +31,7 @@ if (isset($_GET['page'])) {
     <title><?php echo $page[$_GET['page']]['title']; ?> - ASA WEB</title>
     <meta name="description" content="Описание сайта">
     <link href="css/screen.css" rel="stylesheet" type="text/css">
+    <script type="text/javascript" src="js/jquery-1.7.2.min.js"></script>
   </head>
   <body>
     <div id="wrapper">
@@ -43,10 +46,7 @@ if (isset($_GET['page'])) {
                   <a href="/">Главная</a>
                 </li>
                 <li>
-                  <a href="#">Тестовая 1</a>
-                </li>
-                <li>
-                  <a href="#">Тестовая 1.1</a>
+                  <a href="#"><?php echo $page[$_GET['page']]['h1']; ?></a>
                 </li>
               </ul>
               <div class="page_name">
@@ -61,5 +61,14 @@ if (isset($_GET['page'])) {
       </div>
       <?php include ('./include/footer.php'); ?>
     </div>
+    <script>
+      jQuery('a[href="#"]').attr('href','http://www.google.com');
+      jQuery('#blocks').children("div").click(function(){
+        console.log(jQuery(this).text());
+      });
+      jQuery('#blocks').click(function(){
+        jQuery(this).children("div").eq(0).appendTo(this);
+      });
+    </script>
   </body>
 </html>

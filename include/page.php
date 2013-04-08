@@ -11,7 +11,13 @@ $page['contacts']=array(
     'title'=>'Контакты',
 );
 $page['examples']=array(
-    'content'=>'Это содержимое страницы "Примеры работ"',
+    'content'=>'<p>Это содержимое страницы "Примеры работ"</p>
+      <div id="blocks">
+      <div id="d1">Block 01<p>Еще текст</p><p>Второй абзац</p></div>
+      <div id="d2">Block 02</div>
+      <div id="d3">Block 03</div>
+      <div id="d4">Block 04</div>
+      ',
     'h1'=>'Примеры',
     'title'=>'Примеры',
 );
@@ -24,6 +30,7 @@ $page['price']=array(
     'content'=>'Сегодня всЁ Бесплатно!!!',
     'h1'=>'Цены',
     'title'=>'Прайс',
+    'role'=>ROLE_EDITOR,
 );
 $page['404']=array(
     'content'=>'Страница не найдена!!!',

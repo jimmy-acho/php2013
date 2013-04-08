@@ -8,16 +8,7 @@
             echo $_SESSION['counter'];
           ?>
           <?php include ('include/theme.php'); ?>
-          <div id="login">
-            <div class="error"></div>
-            <form >
-              <label>Login:</label>
-              <input type="text" name="login" placeholder="введите его сюда" value="qwerty">
-              <label>Пароль:</label>
-              <input type="password" name="pass" value="">
-              <input type="submit" value="Войти">
-            </form>
-          </div>
+          <?php include('include/user_form.php');?>
           <div class="info">
             <img src="img/phone.png">
             <div class="name">Service Center</div>
