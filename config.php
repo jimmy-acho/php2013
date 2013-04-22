@@ -11,7 +11,7 @@ function error_loging($param='') {
   $en = mysql_errno();
   if ((int) $en > 0) {
     $et = mysql_error();
-    $errors[] = $param.$et . " (" . $en . ")";
+    $errors[] = $param." - ".$et . " (" . $en . ")";
   }
 }
 
@@ -20,10 +20,10 @@ $username = "php2013";
 $password = "php2014";
 $database_name = "php2013";
 mysql_connect($server, $username, $password);
-error_loging(date('Y.m.d h:i:s'),time());
+error_loging(date('Y.m.d H:i:s'),time());
 mysql_select_db($database_name);
-error_loging(date('Y.m.d h:i:s'),time());
+error_loging(date('Y.m.d H:i:s'),time());
 mysql_query("SET NAMES UTF8");
-error_loging(date('Y.m.d h:i:s'),time());
+error_loging(date('Y.m.d H:i:s'),time());
 echo serialize($errors);
 ?>
